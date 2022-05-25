@@ -1,0 +1,91 @@
+<mat-grid-list cols="2" rowHeight="2,5:2">
+    <mat-grid-tile>
+        <mat-card><br>
+            <mat-stepper>
+                <mat-step>
+
+                    <ng-template matStepLabel>Fill out your name</ng-template>
+                    <form>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Name</mat-label>
+                            <br>
+                            <div class="ok">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Layout</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">Cloud</mat-option>
+                                        <mat-option value="two">Box</mat-option>
+                                        <mat-option value="two">Bar</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Position-y</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">Bottom</mat-option>
+                                        <mat-option value="two">Top</mat-option>
+                                        <mat-option value="two">Middle</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Position-x</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">Left</mat-option>
+                                        <mat-option value="two">Center</mat-option>
+                                        <mat-option value="two">Right</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <br>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Transition</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">Zoom</mat-option>
+                                        <mat-option value="two">Center</mat-option>
+
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <br>
+                            </div>
+                        </mat-form-field>
+                    </form>
+                    <div>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+
+                </mat-step>
+                <!-- #docregion label -->
+                <mat-step label="Fill out your address">
+                    <!-- #enddocregion label -->
+                    <form>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Address</mat-label>
+                            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <p>You are now done.</p>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                    </div>
+                </mat-step>
+            </mat-stepper>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card>
+            <mat-card-title class="vector"><img [src]="image"></mat-card-title>
+            <mat-card-content><iframe src="/assets/code/ui.html" style="height:450px;width:400px;" [frameBorder]="0" allowfullscreen></iframe>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+
+</mat-grid-list>
